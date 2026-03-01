@@ -112,7 +112,7 @@ body{
 
 .grid{display:grid;gap:20px}
 .hobbies-grid{grid-template-columns:repeat(4,1fr)}
-.projects-grid{grid-template-columns:repeat(3,1fr)}
+.projects-grid{grid-template-columns:repeat(4,1fr)}
 
 .card{
   background: linear-gradient(180deg, white 0%, var(--muted) 100%);
@@ -166,3 +166,4 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){
   .profile-img, .btn, .card{transition:none}
 }
+
