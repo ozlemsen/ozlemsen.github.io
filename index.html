@@ -1,0 +1,106 @@
+<!--
+  Personal single-page website for Özlem
+  - Clean, responsive, modern design
+  - Uses ozlem.jpg placed in the same folder
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Özlem — Personal Website</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Fixed navigation -->
+    <header class="nav-wrap">
+      <nav class="nav container">
+        <div class="brand">OzlemSen</div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">AnaSayfa</a></li>
+          <li><a href="#hobbies" class="nav-link">Hobilerim</a></li>
+          <li><a href="#projects" class="nav-link"></a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <div class="hero-text">
+            <h1>Merhaba, Ben Özlem</h1>
+            <p class="lead">Bilgiye değer veren, sürekli öğrenen ve gelişmeye açık bir profesyonelim.
+                            Analitik düşünmeyi, ekip çalışmalarında yer almayı ve kendimi sürekli geliştirmeyi seviyorum.
+                            Bu sayfada beni daha yakından tanıyabilirsiniz.</p>
+            <button id="learn-btn" class="btn">Hakkımda Herşey (Değilse de Çok Şey :-))</button>
+          </div>
+
+          <div class="hero-photo">
+            <!-- ozlem.jpg should be placed in the same directory as this file -->
+            <img src="AvatarResim.JPG" alt="Özlem" class="profile-img" />
+          </div>
+        </div>
+      </section>
+
+      <!-- My Hobbies -->
+      <section id="hobbies" class="section">
+        <div class="container">
+          <h2 class="section-title">Hobilerim</h2>
+          <div class="grid hobbies-grid">
+            <article class="card">
+              <h3>Kitap Okumak</h3>
+              <p>Kitap okuyarak fikirleri keşfetmek ve sürekli öğrenmek.</p>
+            </article>
+
+            <article class="card">
+              <h3>Yeni Teknolojileri Öğrenmek</h3>
+              <p>Yeni teknolojileri deneyerek güncel kalmayı amaçlıyorum.</p>
+            </article>
+
+            <article class="card">
+              <h3>Mobbing Çalışmaları</h3>
+              <p>Cezasız suçtur mobbing. Bu konuda, çalışanların farkında olması önemli. </p>
+            </article>
+
+            <article class="card">
+              <h3>Kişisel Gelişim</h3>
+              <p>Yemek yapmaktan fotoğrafçılığa. Yeni beceriler kazanmak. Faydalı alışkanlıklar edinmek. İyi oluş yolculuğunda adımlar atmak.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Projects -->
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">My Projects</h2>
+          <div class="grid projects-grid">
+            <article class="card project-card">
+              <h3>Geographic Information Systems Studies</h3>
+              <p>Research and analysis of spatial data and mapping methodologies.</p>
+            </article>
+
+            <article class="card project-card">
+              <h3>Web-Based Map Applications</h3>
+              <p>Interactive, responsive mapping applications for varied use-cases.</p>
+            </article>
+
+            <article class="card project-card">
+              <h3>Data Analysis and Visualization</h3>
+              <p>Processing and visualizing data to reveal insights and patterns.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">Personal Website - 2026</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
