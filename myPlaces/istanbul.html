@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstanbul Boğazı</title>
+    <link rel="stylesheet" href="../stylesMyPlaces.css">
+    <!-- OpenLayers CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <h2>İstanbul Boğazı </h2>
+    </header>
+    <main>
+      <p>İstanbul, tarihi ve kültürel zenginlikleriyle ünlü bir şehirdir. Boğaz, şehri ikiye böler ve Asya ile Avrupa kıtalarını birbirine bağlar. 
+        <br>Boğaz boyunca yürüyüş yaparken, tarihi yalıları, köprüleri ve muhteşem manzaraları görebilirsiniz. 
+        <br>Boğazın her iki yakasında da birçok kafe ve restoran bulunur, bu yüzden burada oturup çay içmek veya yemek yemek harika bir deneyim olabilir.       
+      </p>
+       <img src="./IstanbulBogazi.jpg" alt="İstanbul Boğazı" width="80%" height="80%"/>
+         <p style="text-align:left;">NOT: Bu harita OpenLayers  ile gösterilmiştir.</p>
+    <div id="map"></div>
+    </main>
+
+    <!-- OpenLayers JS -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+ <p style="text-align:left;">NOT: Bu harita OpenLayer ile gösterilmiştir.</p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        // create map centered on Bosphorus (lon, lat converted)
+        const view = new ol.View({
+          center: ol.proj.fromLonLat([28.9784, 41.0082]),
+          zoom: 10
+        });
+        const map = new ol.Map({
+          target: 'map',
+          layers: [
+            new ol.layer.Tile({ source: new ol.source.OSM() })
+          ],
+          view: view
+        });
+
+        // place a marker
+        const marker = new ol.Feature({
+          geometry: new ol.geom.Point(ol.proj.fromLonLat([28.9784, 41.0082]))
+        });
+        const vectorSource = new ol.source.Vector({features:[marker]});
+        const vectorLayer = new ol.layer.Vector({source: vectorSource});
+        map.addLayer(vectorLayer);
+      });
+    </script>
+    
+</body>
+</html>
+
+

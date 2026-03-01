@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Leaflet Coordinate Example</title>
+    <link rel="stylesheet" href="../stylesMyPlaces.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+</head>
+
+<body>
+    <header>
+        <h2>Antalya Sahilleri </h2>
+    </header>
+    <main>
+      <p>Deniz, kuym, güneş. sahil boyunca keyifli yürüyüşler. İşte Antalya. Sıcak ve güneşli bir kıyı şehri.
+        <br>Sıcakları sevenler için ideal bir destinasyon. Sahil boyunca yürüyüş yaparken Akdeniz'in serin esintisini hissedebilirsiniz.
+        <br>Sıcak sevmiyorsanız eğer MAYIS veya EYLÜL ayında gelin. 
+        <br> Antalya'nın sahilleri, berrak suları ve güzel plajlarıyla ünlüdür. Dünyaca ünlü Konyaaltı Plajı ve Lara Plajı gibi popüler plajlar, ziyaretçilere güneşlenme, yüzme ve su sporları yapma imkanı sunar.
+      </p>
+       <img src="./AntalyaPlajlari.jpg" alt="Antalya Sahilleri" />
+         <p style="text-align:left;">NOT: Bu harita Leaflet ile gösterilmiştir.</p>
+    <div id="map"></div>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        var lat=36.8969;
+        var lon=30.7133;
+        var map = L.map('map').setView([lat, lon], 10);
+       
+
+        //Add OpenStreetMap basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        //Add a marker at the specified coordinates
+        L.marker([lat, lon]).addTo(map)
+            .bindPopup('Antalya Sahilleri')
+            .openPopup();   
+       
+
+    </script>
+    
+</body>
+</html>
+
+
