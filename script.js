@@ -47,65 +47,30 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 
-  // --------- OpenLayers map initialization ----------
+  // --------- Leaflet map initialization ----------
   const mapContainer = document.getElementById('map');
-  if(mapContainer && typeof ol !== 'undefined'){
-    // create a map with OSM tiles
-    const view = new ol.View({
-      center: ol.proj.fromLonLat([0,0]),
-      zoom: 2
-    });
+  if(mapContainer && typeof L !== 'undefined'){
+    // center on Turkey [lat, lon]
+    const map = L.map('map').setView([39.0, 35.0], 1);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-    const map = new ol.Map({
-      target: 'map',
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      view: view
-    });
-
-    // Example places array
+    // Example places - coordinates in [lat, lon]
     const places = [
-      {name: 'Location A', coords: [51.505, -0.09], note: 'A beautiful park where I relax and read.'},
-      {name: 'Location B', coords: [48.8566, 2.3522], note: 'A historic site with rich cultural heritage.'},
-      {name: 'Location C', coords: [34.0522, -118.2437], note: 'Coastal area perfect for nature walks.'}
+      {name: 'Ankara', coords: [39.9334, 32.8597], note: 'Türkiye\'nin <a href="./myPlaces/ankara.html">başkenti</a> ve ikinci büyük şehri.'},
+      {name: 'Location B', coords: [41.0082, 28.9784], note: 'Şehrin simgesi: <a href="./myPlaces/istanbul.html">İstanbul ve Boğazı</a>.'},
+        {name: 'Antalya', coords: [36.8969, 30.7133], note: 'Deniz-kum-güneş. <a href="./myPlaces/antalya.html">Sahil</a> boyunca yürümeyi seviyorsanız Antalya\'yı gezin.'},
     ];
 
-    const features = places.map(p => {
-      const feat = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([p.coords[1], p.coords[0]])),
-        name: p.name,
-        note: p.note
-      });
-      return feat;
+    places.forEach(p => {
+      L.marker(p.coords).addTo(map).bindPopup(`<strong>${p.name}</strong><br>${p.note}`);
     });
 
-    const vectorSource = new ol.source.Vector({features});
-    const vectorLayer = new ol.layer.Vector({
-      source: vectorSource
-    });
-    map.addLayer(vectorLayer);
-
-    if(features.length){
-      const extent = vectorSource.getExtent();
-      view.fit(extent, {padding: [50,50,50,50]});
+    if(places.length){
+      const group = L.featureGroup(places.map(p => L.marker(p.coords)));
+      map.fitBounds(group.getBounds().pad(0.5));
     }
-
-    // Add simple popups
-    const overlayContainer = document.createElement('div');
-    overlayContainer.className = 'map-popup';
-    const overlay = new ol.Overlay({element: overlayContainer});
-    map.addOverlay(overlay);
-
-    map.on('click', function(e){
-      map.forEachFeatureAtPixel(e.pixel, function(feat){
-        const coords = feat.getGeometry().getCoordinates();
-        overlay.setPosition(coords);
-        overlayContainer.innerHTML = `<strong>${feat.get('name')}</strong><br>${feat.get('note')}`;
-      });
-    });
 
     // clicking list items pans to coordinate
     const placeItems = document.querySelectorAll('.places-list li');
@@ -114,9 +79,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const data = item.dataset.coords;
         if(data){
           const parts = data.split(',').map(parseFloat);
-          const lonLat = [parts[1], parts[0]];
-          const dest = ol.proj.fromLonLat(lonLat);
-          view.animate({center: dest, duration: 800, zoom: 10});
+          map.setView([parts[0], parts[1]], 10, {animate: true});
         }
       });
     });

@@ -12,8 +12,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-    <!-- OpenLayers CSS for map -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
+    <!-- Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
   <body>
     <!-- Fixed navigation -->
@@ -56,7 +56,7 @@
           <div class="grid hobbies-grid">
             <article class="card">
               <h3>Kitap Okumak</h3>
-              <p>Kitap okuyarak fikirleri keşfetmek ve sürekli öğrenmek.Belli dönemlerde belli konulara ilişkin kitapları daha çok okuyorum. Mesela şu anda "İLETİŞİM ve HABERCİLİK" favorim </p>
+              <p>Kitap okuyarak fikirleri keşfetmek ve sürekli öğrenmek.</p>
             </article>
 
             <article class="card">
@@ -66,7 +66,7 @@
 
             <article class="card">
               <h3>Mobbing Çalışmaları</h3>
-              <p>Cezasız suçtur mobbing. Bu konuda, çalışanların farkında olması önemli. Şunu hep aklıınızda tutun: Mobbing suçu işleyen insanlar, kötü insanlardır. LinkedIn hesabımda bu konuyla ilgili pek çok yazım var. </p>
+              <p>Cezasız suçtur mobbing. Bu konuda, çalışanların farkında olması önemli. </p>
             </article>
 
             <article class="card">
@@ -80,16 +80,16 @@
       <!-- My Projects -->
       <section id="projects" class="section">
         <div class="container">
-          <h2 class="section-title">My Projects-(Burası İngilizce. Biraz havalı dursun! :-)) )</h2>
+          <h2 class="section-title">My Projects</h2>
           <div class="grid projects-grid">
             <article class="card project-card">
-              <h3>GIS / Web Based Applications </h3>
-              <p>Research and analysis of spatial data and mapping methodologies.Interactive, responsive mapping applications for varied use-cases.I am a complete beginner here. It is nice to be a junior.</p>
+              <h3>Geographic Information Systems Studies</h3>
+              <p>Research and analysis of spatial data and mapping methodologies.</p>
             </article>
 
             <article class="card project-card">
-              <h3>AI /Data Analysis and Visualization</h3>
-              <p>I like to study about AI and applications. In order to train succesfull models, you must have proper datasets. So I want learn about Processing and visualizing data to reveal insights and patterns.</p>
+              <h3>Web-Based Map Applications</h3>
+              <p>Interactive, responsive mapping applications for varied use-cases.</p>
             </article>
 
             <article class="card project-card">
@@ -104,27 +104,27 @@
       <section id="places" class="section">
         <div class="container">
           <h2 class="section-title">Sevdiğim Yerler<i></i></h2>
-          <p>Below is a map of some special locations I enjoy, along with notes about what makes them meaningful.<br>
-             Poniżej mapa kilku ulubionych miejsc, każde z krótkim opisem.</p>
+          <p>Aşağıda en sevdiğim şehirler var. Ve o şehirlerin simgeleriyle ilgili küçük notlar.<br>
+             Ülkemin her yeri görülmeye değer.</p>
           <div id="map" class="map"></div>
           <ul class="places-list">
-            <li data-coords="51.505,-0.09"><strong>Location A</strong>: A beautiful park where I relax and read. (Piękny park, gdzie odpoczywam i czytam.)</li>
-            <li data-coords="48.8566,2.3522"><strong>Location B</strong>: A historic site with rich cultural heritage. (Historyczne miejsce o bogatej kulturze.)</li>
-            <li data-coords="34.0522,-118.2437"><strong>Location C</strong>: Coastal area perfect for nature walks. (Wybrzeże idealne na spacery wśród natury.)</li>
-             <li data-coords="34.0522,-118.2437"><strong>Location C</strong>: Coastal area perfect for nature walks. <a href="ozlemsen.github.io/myPlaces/leaflet.html">Ayrıntılar Burada</a> </li>
+            <li data-coords="39.9334, 32.8597"><strong>Ankara</strong>: Türkiye'nin <a href="./myPlaces/ankara.html">BAŞKENT ve Meclis</a> ve ikinci büyük şehri. Yoktan var edilen tek başkent!</li>
+            <li data-coords="41.0082, 28.9784"><strong>İstanbul</strong>: Tarihi ve kültürel zenginlikleriyle ünlü <a href="./myPlaces/istanbul.html">İstanbul ve Boğazı</a> Şehri ikiye böler, kıtaları birbirine bağlar.</li>
+            <li data-coords="36.8969, 30.7133"><strong>Antalya</strong>: Sahil yürüyüşlerinin başkenti. <a href="./myPlaces/antalya.html">Antalya ve Sahilleri</a> </li>
           </ul>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container">Personal Website - 2026</div>
-    </footer>
+      <div class="container">
+        Personal Website - 2026<br>
+        <a href="mailto:ozlem.sen@gmail.com">ozlem.sen@gmail.com</a>
+      </div>
+    </footer> 
 
-    <!-- OpenLayers script -->
-    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+    <!-- Leaflet script -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
-
-
