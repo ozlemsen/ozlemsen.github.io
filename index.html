@@ -12,16 +12,20 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <!-- OpenLayers CSS for map -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css" />
   </head>
   <body>
     <!-- Fixed navigation -->
     <header class="nav-wrap">
       <nav class="nav container">
         <div class="brand">OzlemSen</div>
+        <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link">AnaSayfa</a></li>
           <li><a href="#hobbies" class="nav-link">Hobilerim</a></li>
-          <li><a href="#projects" class="nav-link"></a></li>
+          <li><a href="#projects" class="nav-link">Projelerim</a></li>
+          <li><a href="#places" class="nav-link">Mekanlarım</a></li>
         </ul>
       </nav>
     </header>
@@ -95,12 +99,30 @@
           </div>
         </div>
       </section>
+
+      <!-- Favorite places map section -->
+      <section id="places" class="section">
+        <div class="container">
+          <h2 class="section-title">Sevdiğim Yerler<i></i></h2>
+          <p>Below is a map of some special locations I enjoy, along with notes about what makes them meaningful.<br>
+             Poniżej mapa kilku ulubionych miejsc, każde z krótkim opisem.</p>
+          <div id="map" class="map"></div>
+          <ul class="places-list">
+            <li data-coords="51.505,-0.09"><strong>Location A</strong>: A beautiful park where I relax and read. (Piękny park, gdzie odpoczywam i czytam.)</li>
+            <li data-coords="48.8566,2.3522"><strong>Location B</strong>: A historic site with rich cultural heritage. (Historyczne miejsce o bogatej kulturze.)</li>
+            <li data-coords="34.0522,-118.2437"><strong>Location C</strong>: Coastal area perfect for nature walks. (Wybrzeże idealne na spacery wśród natury.)</li>
+             <li data-coords="34.0522,-118.2437"><strong>Location C</strong>: Coastal area perfect for nature walks. <a href="./myPlaces/leaflet.html">Ayrıntılar Burada</a> </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
       <div class="container">Personal Website - 2026</div>
     </footer>
 
+    <!-- OpenLayers script -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

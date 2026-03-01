@@ -6,6 +6,10 @@ Files:
 - script.js
 - ozlem.jpg (place your portrait image here)
 
+New section 'My Favorite Places' uses OpenLayers to render a map; you can add your own coordinates in `script.js`.  Clicking a location in the list pans the map to that point.
+
+The navigation bar now includes a hamburger menu for mobile screens; tap the ☰ icon to open/close the links.
+
 How to run:
 - Open `index.html` in your browser.
 - Or run a simple HTTP server and visit http://localhost:8000
